@@ -1,0 +1,28 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.textNavbar {
+    color: white !important;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+}
+
+.buyBtn {
+    border-radius: 100px;
+}
+
+.fixedButton{
+    margin-top: 9rem;
+}
