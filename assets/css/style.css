@@ -1,7 +1,12 @@
+html,
 body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
+    background-image: url("../img/bg.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
 
 
@@ -23,6 +28,31 @@ body {
     border-radius: 100px;
 }
 
-.fixedButton{
+.fixedButton {
     margin-top: 9rem;
+}
+
+.a-img img {
+    width: 5rem;
+    height: auto;
+    margin-right: 3rem;
+}
+
+#clothes,
+#figurine,
+#cave {
+    display: none;
+}
+
+img {
+    width: 90%;
+    height: auto;
+}
+
+.price {
+    font-size: 3rem;
+}
+
+.priceCent {
+    font-size: 1.5rem;
 }

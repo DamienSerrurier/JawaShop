@@ -6,523 +6,591 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
-    <title>Site</title>
+    <title>JawaShop</title>
 </head>
 
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark justify-content-lg-center">
-        <a class="navbar-brand" href="#">Jawa Shop</a>
+        <a id="homeLogo" class="navbar-brand a-img btn"><img src="assets/img/JawaShop.png"
+                alt="Logo de la boutique Jawa Shop"></a>
         <div class="container-fluid-nav">
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse col-lg-12" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+                        <a id="homeBtn" class="nav-link btn">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Vêtements</a>
+                        <a id="clothesBtn" class="nav-link btn">Vêtements</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Figurines</a>
+                        <a id="figuBtn" class="nav-link btn">Figurines</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">La caverne de Jabba</a>
+                        <a id="caveBtn" class="nav-link btn">La caverne de Jabba</a>
                     </li>
-                    <button type="button" class="btn btn-warning buyBtn">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
-                        </svg>
-                    </button>
+                    <div class="row col-1 ml-auto">
+                        <button type="button" data-toggle="modal" data-target="#exampleModal"
+                            class="btn btn-warning buyBtn">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                            </svg>
+                        </button>
+                    </div>
                 </ul>
             </div>
         </div>
     </nav>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="PanierModalLabel">Votre panier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-nav">
+                    <form>
+                        <table>
+                            <td> photo + description </td>
+                            <td>Prix unitaire</td>
+                            <td> Quantite
+                                <button> + </button>
+                                <button> - </button>
+                            </td>
+                            <td> Total</td>
 
-    <div class="container fluid">
-        <div id="Product" class="col-12">
-            <div id="clothes" class="row justify-content-center">
-                <div class="card-deck border">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/chaussetes_c3po.png" class="card-img-top" alt="Chaussettes C3PO">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Chaussettes C3PO</h5>
-                            <p class="card-text">Chaussettes Star Wars Sispeo, Multicolore, 35 - 43 5,0 sur 5 étoiles 4
-                                14,00€ Elles sont mi-hautes, et pour plus de confort, elles sont composées de Coton,
-                                spandex
-                                et de Polyester. Elles sont extensibles et peuvent ainsi convenir de la taille 35 à la
-                                taille 43. Un Must Have !</p>
-                            <p class="price">10€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </tr>
+
+                            <td>Montant total Commande
+                                <input class="Montant"></input>
+                            </td>
+
+                            </tr>
+                        </table>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-primary">Continuez vos achats</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container fluid bg-white">
+
+        <div id="home" class="col-12 text-center mt-2">
+            <h1>Titre accueil</h1>
+            <p>test</p>
+        </div>
+
+        <div id="clothes">
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-lg-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/chaussetes_c3po.png" class="card-img-top"
+                                alt="Chaussettes C3PO">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Chaussettes C3PO</h5>
+                                    <p class="card-text">Chaussettes Star Wars Sispeo, Multicolore, 35 - 43 5,0 sur 5
+                                        étoiles 4
+                                        14,00€ Elles sont mi-hautes, et pour plus de confort, elles sont composées de
+                                        Coton,
+                                        spandex
+                                        et de Polyester. Elles sont extensibles et peuvent ainsi convenir de la taille
+                                        35 à
+                                        la
+                                        taille 43. Un Must Have !
+                                    </p>
+                                <p class="price">10€</p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/chaussettes_chewbacca.png" class="card-img-top"
+                                alt="Chaussettes Chewbacca">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Chaussettes Chewbacca</h5>
+                                <p class="card-text">Fans de Star Wars et du mythique personnage de Chubaka, ces
+                                    chaussettes
+                                    Chubaka sont alors pour vous ! elles sont composées de Coton, spandex et de
+                                    Polyester.
+                                    Elles
+                                    sont extensibles et peuvent ainsi convenir de la taille 35 à la taille 43.</p>
+                                <p class="price">10€</p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/freegun_stormstrooper.png" class="card-img-top"
+                                alt="Caleçon Stormstrooper">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Boxer Stormtrooper</h5>
+                                <p class="card-text">92% Polyester, 8% Élasthanne
+                                    Lavage à la main ou en machine à l'eau froide (max. 30 degrés, taille S à XL)</p>
+                                <p class="price">12€</p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/pull_noel_baby_yoda.png" class="card-img-top"
+                                alt="Pull Baby Yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Pull Noel Baby Yoda</h5>
+                                <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL.</p>
+                                <p class="price">35€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-12Product1">
-                        <img src="assets/img/vetements/chaussettes_chewbacca.png" class="card-img-top"
-                            alt="Chaussettes Chewbacca">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Chaussettes Chewbacca</h5>
-                            <p class="card-text">Fans de Star Wars et du mythique personnage de Chubaka, ces chaussettes
-                                Chubaka sont alors pour vous ! elles sont composées de Coton, spandex et de Polyester.
-                                Elles
-                                sont extensibles et peuvent ainsi convenir de la taille 35 à la taille 43.</p>
-                            <p class="price">10€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                </div>
+            </div>
+
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/pull_noel_sw.png" class="card-img-top"
+                                alt="Pull Noel Stars Wars">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Pull Noel SW</h5>
+                                <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
+                                <p class="price">35€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/pull_noel_yoda.png" class="card-img-top" alt="Pull Yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Pull Noel Yoda</h5>
+                                <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
+                                <p class="price">35€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/robe_de_chambre_sw.png" class="card-img-top"
+                                alt="robe de chambre.">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Robe de chambre SW</h5>
+                                <p class="card-text">ROBE DE CHAMBRE 100% Polyester, taille de 3 à 14 ans.</p>
+                                <p class="price">23€<span class="priceCent">95</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/sweat_dark_vador.png" class="card-img-top"
+                                alt="sweat dark-vador">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Sweat Dark Vado</h5>
+                                <p class="card-text">100% Coton
+                                    Lavage en machine
+                                    Coupe régulière
+                                    Manche longue existe en taille S à XL.</p>
+                                <p class="price">25€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/freegun_stormstrooper.png" class="card-img-top"
-                            alt="Caleçon Stormstrooper">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Boxer Stormtrooper</h5>
-                            <p class="card-text">92% Polyester, 8% Élasthanne
-                                Lavage à la main ou en machine à l'eau froide (max. 30 degrés, taille S à XL)</p>
-                            <p class="price">12€</p>
-                                <a href="#" class="btn btn-primary fixedButton">Ajouter au panier </a>
+                </div>
+            </div>
+
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/tshirt-chewbacca.png" class="card-img-top"
+                                alt="Tshirt Chewbacca">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tshirt Chewbacca</h5>
+                                <p class="card-text">100% Coton
+                                    Lavage en machine
+                                    Coupe régulière
+                                    Manche courte existe en taille S à XL</p>
+                                <p class="price">15€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/pull_noel_baby_yoda.png" class="card-img-top"
-                            alt="Pull Baby Yoda">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pull Noel Baby Yoda</h5>
-                            <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL.</p>
-                            <p class="price">35.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/tshirt_baby_yoda.png" class="card-img-top"
+                                alt="Tshirt Baby Yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tshirt Baby Yoda</h5>
+                                <p class="card-text">100% Coton
+                                    Lavage en machine
+                                    Coupe régulière
+                                    Manche courte existe en taille S à XL.</p>
+                                <p class="price">12€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/tshirt_luke.png" class="card-img-top" alt="Tshirt Luke">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tshirt Luke</h5>
+                                <p class="card-text">100% Coton
+                                    Lavage en machine
+                                    Coupe régulière
+                                    Manche courte existe en taille S à XL.</p>
+                                <p class="price">12€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/vetements/tshirt_yoda_pokemon.png" class="card-img-top"
+                                alt="Tshirt Yoda Pokemon">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tshirt Yoda Pokemon</h5>
+                                <p class="card-text">100% Coton
+                                    Lavage en machine
+                                    Coupe régulière
+                                    Manche courte existe en taille S à XL.</p>
+                                <p class="price">12€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/pull_noel_sw.png" class="card-img-top"
-                            alt="Pull Noel Stars Wars">
-                        <div class="card-body">
-                            <h5 class="card-title">Pull Noel SW</h5>
-                            <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
-                            <p class="price">35.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+        <div id="figurine">
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div id="figurines" class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/baby_yoda_eating.png" class="card-img-top" alt="Bébé Yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Bébé Yoda</h5>
+                                <p class="card-text">Personnage mesure environ 9 cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous!
+                                </p>
+                                <p class="price">16€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/bb8.png" class="card-img-top" alt="Figurine BB8">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine BB8</h5>
+                                <p class="card-text">Personnage mesure environ 9 cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous!</p>
+                                <p class="price">13€<span class="priceCent">9</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/c3po.png" class="card-img-top" alt="Figurine C3P0">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title"> Figurine C3P0</h5>
+                                <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous!</p>
+                                <p class="price">10€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/chewbacca.png" class="card-img-top" alt="Figurine Chewbacca">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Chewbacca</h5>
+                                <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">12€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/pull_noel_yoda.png" class="card-img-top" alt="Pull Yoda">
-                        <div class="card-body">
-                            <h5 class="card-title">Pull Noel Yoda</h5>
-                            <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
-                            <p class="price">35.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                </div>
+            </div>
+
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/dark_vador.png" class="card-img-top"
+                                alt="Figurine Dark Vador">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Dark Vador</h5>
+                                <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">12€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/han_solo.png" class="card-img-top" alt="Figurine Han Solo">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Han Solo</h5>
+                                <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">14€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/jabba.png" class="card-img-top" alt="Figurine Jabba">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Jabba le BG</h5>
+                                <p class="card-text">Personnage mesure environ 8.5cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">14€<span class="priceCent">95</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/jawa.png" class="card-img-top" alt="Figurine Jawa">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Jawa</h5>
+                                <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">15€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/robe_de_chambre_sw.png" class="card-img-top"
-                            alt="robe de chambre.">
-                        <div class="card-body">
-                            <h5 class="card-title">Robe de chambre SW</h5>
-                            <p class="card-text">ROBE DE CHAMBRE 100% Polyester, taille de 3 à 14 ans.</p>
-                            <p class="price">23.95€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                </div>
+            </div>
+
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/kylo_ren.png" class="card-img-top" alt="Figurine Kylo Ren">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Kylo Ren</h5>
+                                <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">15€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/sweat_dark_vador.png" class="card-img-top"
-                            alt="sweat dark-vador">
-                        <div class="card-body">
-                            <h5 class="card-title">Sweat Dark Vado</h5>
-                            <p class="card-text">100% Coton
-                                Lavage en machine
-                                Coupe régulière
-                                Manche longue existe en taille S à XL.</p>
-                            <p class="price">25.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/leia.png" class="card-img-top" alt="Figurine Lela">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Lela</h5>
+                                <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">12€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/r2d2.png" class="card-img-top" alt="Figurine R2D2">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine R2D2</h5>
+                                <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
+                                    dans une boîte illustrée qui laisse apparaître le personnage
+                                    Collectionnez-les tous</p>
+                                <p class="price">13€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                            </div>
+                        </div>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/figurines/rey.png" class="card-img-top" alt="Figurine Rey">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Figurine Rey</h5>
+                                <p class="card-text">Mesure environ 8.6cm de haut et est emballé dans une boîte
+                                    illustrée
+                                    qui laisse
+                                    apparaître le personnage Collectionnez-les tous></p>
+                                <p class="price">14€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/tshirt-chewbacca.png" class="card-img-top"
-                            alt="Tshirt Chewbacca">
-                        <div class="card-body">
-                            <h5 class="card-title">Tshirt Chewbacca</h5>
-                            <p class="card-text">100% Coton
-                                Lavage en machine
-                                Coupe régulière
-                                Manche courte existe en taille S à XL</p>
-                            <p class="price">15.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+        <div id="cave">
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div id="caverne" class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/abattant_dark_vador.png" class="card-img-top"
+                                alt="Abattant Dark Vador">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Abattant Dark Vador</h5>
+                                <p class="card-text"> Sticker Fun Abattant Toilette Star Wars,
+                                    Vinyl Brillant Couleur au Choix</p>
+                                <p class="price">6€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/tshirt_baby_yoda.png" class="card-img-top"
-                            alt="Tshirt Baby Yoda">
-                        <div class="card-body">
-                            <h5 class="card-title">Tshirt Baby Yoda</h5>
-                            <p class="card-text">100% Coton
-                                Lavage en machine
-                                Coupe régulière
-                                Manche courte existe en taille S à XL.</p>
-                            <p class="price">12.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/boite_a_musique.png" class="card-img-top"
+                                alt="Boite à musique">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Boite à musique</h5>
+                                <p class="card-text">Pas de batterie : démarrage à garder la poignée illimité à jouer
+                                    Don't besoin de batterie,
+                                    en utilisant la main peut faire qu'elle fonctionne bien.
+                                    Aucune limite : la boîte avec une bonne qualité sonore dont jouissent les enfants et
+                                    les adultes.
+                                    Et de petite taille, facile à transporter.</p>
+                                <p class="price">10€<span class="priceCent">99</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/tshirt_luke.png" class="card-img-top" alt="Tshirt Luke">
-                        <div class="card-body">
-                            <h5 class="card-title">Tshirt Luke</h5>
-                            <p class="card-text">100% Coton
-                                Lavage en machine
-                                Coupe régulière
-                                Manche courte existe en taille S à XL.</p>
-                            <p class="price">12.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/boule_sapin_baby_yoda.png" class="card-img-top"
+                                alt="boule de sapin baby yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Boule de sapin baby yoda</h5>
+                                <p class="card-text">Ajoutez des cadeaux précieux à l'arbre avec vos enfants.
+                                    Cet ornement de Noël souvenir présente le nouveau personnage bien-aimé dans son
+                                    landau flottant.</p>
+                                <p class="price">13€<span class="priceCent">59</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/vetements/tshirt_yoda_pokemon.png" class="card-img-top"
-                            alt="Tshirt Yoda Pokemon">
-                        <div class="card-body">
-                            <h5 class="card-title">Tshirt Yoda Pokemon</h5>
-                            <p class="card-text">100% Coton
-                                Lavage en machine
-                                Coupe régulière
-                                Manche courte existe en taille S à XL.</p>
-                            <p class="price">12.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div id="figurines" class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/baby_yoda_eating.png" class="card-img-top" alt="Bébé Yoda">
-                        <div class="card-body">
-                            <h5 class="card-title">Bébé Yoda</h5>
-                            <p class="card-text">Personnage mesure environ 9 cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous!
-                            </p>
-                            <p class="price">16.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/bb8.png" class="card-img-top" alt="Figurine BB8">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine BB8</h5>
-                            <p class="card-text">Personnage mesure environ 9 cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous!</p>
-                            <p class="price">13.9€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/c3po.png" class="card-img-top" alt="Figurine C3P0">
-                        <div class="card-body">
-                            <h5 class="card-title"> Figurine C3P0</h5>
-                            <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous!</p>
-                            <p class="price">10.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/chewbacca.png" class="card-img-top" alt="Figurine Chewbacca">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Chewbacca</h5>
-                            <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">12.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/casque_luke.png" class="card-img-top" alt="Casque Luke">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Casque Luke</h5>
+                                <p class="card-text">Edition Collector,Confortable, avec une visière ajustable et de
+                                    multiples effets sonores et lumineux.
+                                    3 haut-parleurs internes pour recréer l'ambiance d'une bataille épique.
+                                    Inclus : 1 casque. 3 piles AAA requises, non incluses.</p>
+                                <p class="price">99€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/dark_vador.png" class="card-img-top" alt="Figurine Dark Vador">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Dark Vador</h5>
-                            <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">12.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/decapsuleur.png" class="card-img-top" alt="Decapsuleur">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Decapsuleur</h5>
+                                <p class="card-text">Materiau: acier inoxydable
+                                    Ouvrir les bouteilles avec style
+                                    Original Stormtrooper décapsuleur de bouteilles
+                                    Haute qualité,
+                                    Dimension:13 x 85 x 25 centimètres
+                                </p>
+                                <p class="price">8€<span class="priceCent">95</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/han_solo.png" class="card-img-top" alt="Figurine Han Solo">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Han Solo</h5>
-                            <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">14.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/gauffrier_dark_vador.png" class="card-img-top"
+                                alt="gauffrier_dark_vador">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Gauffrier dark vador</h5>
+                                <p class="card-text">
+                                    Marque Pangea
+                                    Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres
+                                    Poids de l'article 2.7 Livres
+                                    Puissance 900 Watts</p>
+                                <p class="price">45€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/jabba.png" class="card-img-top" alt="Figurine Jabba">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Jabba</h5>
-                            <P> class="card-text">Personnage mesure environ 8.5cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">14.95€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/grille_pain_deathstar.png" class="card-img-top"
+                                alt="grille pain Dark Vador">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">grille pain dark vador</h5>
+                                <p class="card-text">
+                                    Marque Pangea
+                                    Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres
+                                    Poids de l'article 2.7 Livres
+                                    Puissance 900 Watts</p>
+                                <p class="price">45€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/jawa.png" class="card-img-top" alt="Figurine Jawa">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Jawa</h5>
-                            <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">15.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/housse_chewbacca.png" class="card-img-top"
+                                alt="Coussin Chewbacca">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Coussin Chewbacca</h5>
+                                <p class="card-text"> Matière: Polyester et Coton,
+                                    Dimension: 40*40 cm
+                                </p>
+                                <p class="price">13€</p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/kylo_ren.png" class="card-img-top" alt="Figurine Kylo Ren">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Kylo Ren</h5>
-                            <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">15.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+            <div class="card-group border">
+                <div id="Product" class="col-12">
+                    <div class="row justify-content-center">
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/interrupteur.png" class="card-img-top" alt="Interrupteur">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Interrupteur</h5>
+                                <p class="card-text">Autocollant en vinyle pour interrupteur,
+                                    à motifs Star Wars, tel que présenté en photo (voir la description pour plus de
+                                    détails).
+                                    Durée de vie de 7 ans minimum.
+                                    Résistant à l’eau et à la décoloration.
+                                    Découpage du vinyle ajusté.
+                                    Facile à mettre en place et à retirer.</p>
+                                <p class="price">1€<span class="priceCent">25</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/leia.png" class="card-img-top" alt="Figurine Lela">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Lela</h5>
-                            <p class="card-text">Personnage mesure environ 9cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">12.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/sabre_laser.png" class="card-img-top" alt="Sabre Laser">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Sabre Laser</h5>
+                                <p class="card-text">SABRE LASER SCREAM SABER AVEC EFFETS SONORES,
+                                    3 MODES SONORES : Les enfants à partir de 4 ans peuvent jouer à combattre au sabre
+                                    laser avec ce jouet électronique incluant des sons tirés du film </p>
+                                <p class="price">19€<span class="priceCent">90</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/r2d2.png" class="card-img-top" alt="Figurine R2D2">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine R2D2</h5>
-                            <p class="card-text">Personnage mesure environ 7.6cm de haut et est emballé
-                                dans une boîte illustrée qui laisse apparaître le personnage
-                                Collectionnez-les tous</p>
-                            <p class="price">13.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/spatule_sw.png" class="card-img-top" alt="Spatule">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Spatule</h5>
+                                <p class="card-text">Star Wars Rogue One SW02095 Spatule - Dark Vador, Sabre Laser,
+                                    Acier Inoxydable, Noir, 6 x 28 x 28 cm</p>
+                                <p class="price">22€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/figurines/rey.png" class="card-img-top" alt="Figurine Rey">
-                        <div class="card-body">
-                            <h5 class="card-title">Figurine Rey</h5>
-                            <p class="card-text">Mesure environ 8.6cm de haut et est emballé dans une boîte illustrée
-                                qui laisse
-                                apparaître le personnage Collectionnez-les tous></p>
-                            <p class="price">14.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div id="caverne" class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/abattant_dark_vador.png" class="card-img-top"
-                            alt="Abattant Dark Vador">
-                        <div class="card-body">
-                            <h5 class="card-title">Abattant Dark Vador</h5>
-                            <p class="card-text"> Sticker Fun Abattant Toilette Star Wars,
-                                Vinyl Brillant Couleur au Choix</p>
-                            <p class="price">6.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/boite_a_musique.png" class="card-img-top" alt="Boite à musique">
-                        <div class="card-body">
-                            <h5 class="card-title">Boite à musique</h5>
-                            <p class="card-text">Pas de batterie : démarrage à garder la poignée illimité à jouer
-                                Don't besoin de batterie,
-                                en utilisant la main peut faire qu'elle fonctionne bien.
-                                Aucune limite : la boîte avec une bonne qualité sonore dont jouissent les enfants et
-                                les adultes.
-                                Et de petite taille, facile à transporter.</p>
-                            <p class="price">10.99€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/boule_sapin_baby_yoda.png" class="card-img-top"
-                            alt="boule de sapin baby yoda">
-                        <div class="card-body">
-                            <h5 class="card-title">Boule de sapin baby yoda</h5>
-                            <p class="card-text">Ajoutez des cadeaux précieux à l'arbre avec vos enfants.
-                                Cet ornement de Noël souvenir présente le nouveau personnage bien-aimé dans son
-                                landau flottant.</p>
-                            <p class="price">13.59€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/casque_luke.png" class="card-img-top" alt="Casque Luke">
-                        <div class="card-body">
-                            <h5 class="card-title">Casque Luke</h5>
-                            <p class="card-text">Edition Collector,Confortable, avec une visière ajustable et de
-                                multiples effets sonores et lumineux.
-                                3 haut-parleurs internes pour recréer l'ambiance d'une bataille épique.
-                                Inclus : 1 casque. 3 piles AAA requises, non incluses.</p>
-                            <p class="price">99.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/decapsuleur.png" class="card-img-top" alt="Decapsuleur">
-                        <div class="card-body">
-                            <h5 class="card-title">Decapsuleur</h5>
-                            <p class="card-text">Materiau: acier inoxydable
-                                Ouvrir les bouteilles avec style
-                                Original Stormtrooper décapsuleur de bouteilles
-                                Haute qualité,
-                                Dimension:13 x 85 x 25 centimètres
-                            </p>
-                            <p class="price">8.95€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/gauffrier_dark_vador.png" class="card-img-top"
-                            alt="gauffrier_dark_vador">
-                        <div class="card-body">
-                            <h5 class="card-title">Gauffrier dark vador</h5>
-                            <p class="card-text">
-                                Marque Pangea
-                                Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres
-                                Poids de l'article 2.7 Livres
-                                Puissance 900 Watts</p>
-                            <p class="price">45.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/grille_pain_deathstar.png" class="card-img-top"
-                            alt="grille pain Dark Vador">
-                        <div class="card-body">
-                            <h5 class="card-title">grille pain dark vador</h5>
-                            <p class="card-text">
-                                Marque Pangea
-                                Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres
-                                Poids de l'article 2.7 Livres
-                                Puissance 900 Watts</p>
-                            <p class="price">45.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/housse_chewbacca.png" class="card-img-top" alt="Coussin Chewbacca">
-                        <div class="card-body">
-                            <h5 class="card-title">Coussin Chewbacca</h5>
-                            <p class="card-text">;;;;;;;;;;;;</p>
-                            <p class="price">;;;;;;;</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card-deck border">
-            <div id="Product" class="col-12">
-                <div class="row justify-content-center">
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/interrupteur.png" class="card-img-top" alt="Interrupteur">
-                        <div class="card-body">
-                            <h5 class="card-title">Interrupteur</h5>
-                            <p class="card-text">Autocollant en vinyle pour interrupteur,
-                                à motifs Star Wars, tel que présenté en photo (voir la description pour plus de
-                                détails).
-                                Durée de vie de 7 ans minimum.
-                                Résistant à l’eau et à la décoloration.
-                                Découpage du vinyle ajusté.
-                                Facile à mettre en place et à retirer.</p>
-                            <p class="price">1.25€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/sabre_laser.png" class="card-img-top" alt="Sabre Laser">
-                        <div class="card-body">
-                            <h5 class="card-title">Sabre Laser</h5>
-                            <p class="card-text">SABRE LASER SCREAM SABER AVEC EFFETS SONORES,
-                                3 MODES SONORES : Les enfants à partir de 4 ans peuvent jouer à combattre au sabre
-                                laser avec ce jouet électronique incluant des sons tirés du film </p>
-                            <p class="price">19.90€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/spatule_sw.png" class="card-img-top" alt="Spatule">
-                        <div class="card-body">
-                            <h5 class="card-title">Spatule</h5>
-                            <p class="card-text">Star Wars Rogue One SW02095 Spatule - Dark Vador, Sabre Laser,
-                                Acier Inoxydable, Noir, 6 x 28 x 28 cm</p>
-                            <p class="price">22.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-sm-12 Product1">
-                        <img src="assets/img/caverne/tasse_baby_yoda.png" class="card-img-top" alt="Tasse baby Yoda">
-                        <div class="card-body">
-                            <h5 class="card-title">Tasse baby Yoda</h5>
-                            <p class="card-text">Matière Porcelaine
-                                Marque Paladone
-                                Capacité 300 Millilitres
-                                Dimensions de l'article L x L x H 10 x 21 x 8 centimètres</p>
-                            <p class="price">12.50€</p>
-                            <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                        <div class="card col-xl-3 col-sm-12 border Product1">
+                            <img src="assets/img/caverne/tasse_baby_yoda.png" class="card-img-top"
+                                alt="Tasse baby Yoda">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">Tasse baby Yoda</h5>
+                                <p class="card-text">Matière Porcelaine
+                                    Marque Paladone
+                                    Capacité 300 Millilitres
+                                    Dimensions de l'article L x L x H 10 x 21 x 8 centimètres</p>
+                                <p class="price">12€<span class="priceCent">50</span></p>
+                                <a href="#" class="btn btn-primary">Ajouter au panier </a>
+                            </div>
                         </div>
                     </div>
                 </div>
