@@ -9,19 +9,14 @@ body {
     height: 100%;
 }
 
+.border {
+    border-radius: 15px;
+    box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.20);
+}
+
 
 .textNavbar {
     color: white !important;
-}
-
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: red;
-    color: white;
-    text-align: center;
 }
 
 .buyBtn {
@@ -51,4 +46,30 @@ img {
 
 .priceCent {
     font-size: 1.5rem;
+}
+
+.navbar-color, .footer-color {
+    background-color: #182B33;
+}
+
+.text-light-grey {
+    color: #C0C0C0;
+}
+
+.text-light-grey:hover, .text-navbar:hover {
+    color: gold;
+  }
+
+.add-button {
+    color: white;
+    background-color: #24414C;
+}
+
+.add-button:hover {
+    color: gold;
+    border: solid 1px white;
+  }
+
+.text-navbar {
+    color: white;
 }
