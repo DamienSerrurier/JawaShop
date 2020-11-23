@@ -135,56 +135,70 @@ function ajouterPanier(id_du_produit) {
     ///////////////////////////
 
     ///////////////////// AJOUT AU PANIER
-    let new_elem = document.createElement("div");
+    let new_elem = document.createElement("tr");
     new_elem.appendChild(produit_img);
     new_elem.appendChild(titre);
     new_elem.appendChild(ref);
     new_elem.appendChild(prix);
 
 
-    let compteur = document.createElement("div");
+
+
+
+
+
 
     let displayCounter = document.createElement('input');
+    displayCounter.id = id_du_produit;
+    new_elem.appendChild(displayCounter)
 
-    compteur.appendChild(displayCounter)
-
-
-    
-
-
-
-
+    let sousTotal = document.createElement('input')
+    sousTotal.id = id_du_produit;
+    new_elem.appendChild(sousTotal);
 
     let new_button = document.createElement("button");
     new_button.innerHTML = "+";
     new_button.onclick = event => {
         event.preventDefault();
         console.log("+ 1");
+        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
+        return multiply;
         //   ici on ajoute 1 a cet article
-        new_button.onclick = event => {
-            if (parseInt(compteur.innerHTML) + 1 >= 0) {
-                compteur.innerHTML = parseInt(compteur.innerHTML) + 1;
-                // displayCounter.appendChild(compteur.innerHTML);
-            }
+        // new_button.onclick = event => {
+        //     if (parseInt(compteur.innerHTML) + 1 >= 0) {
+        //        let text = ""
+        //         compteur.innerHTML = parseInt(compteur.innerHTML) + 1;
+        //         // displayCounter.appendChild(compteur.innerHTML);
 
-        }
+        //     }
+
+        // }
     }
     let new_button2 = document.createElement("button");
     new_button2.innerHTML = "-";
     new_button2.onclick = event => {
         event.preventDefault();
         console.log("- 1");
-        //  ici on supprime 1 a cet article
-        new_button2.onclick = event => {
-            if (parseInt(compteur.innerHTML) - 1 >= 0) {
-                compteur.innerHTML = parseInt(compteur.innerHTML) - 1;
-            }
+        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
 
-        }
+        //  ici on supprime 1 a cet article
+        // new_button2.onclick = event => {
+        //     if (parseInt(compteur.innerHTML) - 1 >= 0) {
+        //         compteur.innerHTML = parseInt(compteur.innerHTML) - 1;
+
+
+
+
+
+        //     }
+
+        // }
     }
+
+    document.getElementById("panier").appendChild(new_elem);
+
     new_elem.appendChild(new_button);
     new_elem.appendChild(new_button2);
-    document.getElementById("panier").appendChild(new_elem);
 
 
 }
@@ -193,4 +207,15 @@ let supShop = document.getElementById("delete");
 supShop.onclick = () => {
     panier.innerHtml = null;
     deja_cliquer = [];
+}
+
+
+function multiply(price) {
+    console.log(price);
+    return price = parseFloat(prix) * parseFloat(displayCounter);
+}
+
+function divide(price) {
+    console.log(price);
+    return price = parseFloat(prix) / parseFloat(displayCounter);
 }

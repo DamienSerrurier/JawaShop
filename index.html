@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
         integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" href="assets/img/JawaShop.ico">
     <title>JawaShop</title>
 </head>
 
@@ -15,12 +16,12 @@
         <a id="homeLogo" class="navbar-brand a-img btn"><img src="assets/img/JawaShop.png"
                 alt="Logo de la boutique Jawa Shop"></a>
         <div class="container-fluid-nav">
-            <button class="navbar-toggler col-sm-12" type="button" data-toggle="collapse" data-target="#navbarNav"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse col-lg-12" id="navbarNav">
-                <ul class="navbar-nav mr-auto">
+            <div class="collapse navbar-collapse col-lg-12 col-sm-12" id="navbarNav">
+                <ul class="navbar-nav mr-5">
                     <li class="nav-item active">
                         <a id="homeBtn" class="btn text-navbar">Accueil</a>
                     </li>
@@ -33,20 +34,21 @@
                     <li class="nav-item active">
                         <a id="caveBtn" class="btn text-navbar">La caverne de Jabba</a>
                     </li>
-                    <div class="row col-1 ml-auto">
+                    <li class="nav-item active ml-3 text-navbar">
                         <button type="button" data-toggle="modal" data-target="#exampleModal"
-                            class="btn btn-warning buyBtn">
-                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
+                            class="btn btn-warning buyBtn">Panier
+                            <svg width="2em" height="1em" viewBox="0 0 16 16" class="bi bi-cart" fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd"
                                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
                             </svg>
                         </button>
-                    </div>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
@@ -81,14 +83,14 @@
     <div class="container-fluid col-12 p-0 m-0">
 
         <div id="home" class="col-lg-8 col-sm-11 bg-white text-center mt-3 py-2 mx-auto category-name">
-            <h1>Titre accueil</h1>
-            <p>test</p>
+            <h1 class="jawa-title">JawaShop</h1>
+            <p class="jawa-slogan">Là où la réalité dépasse la fiction.</p>
         </div>
 
         <div id="clothes">
             <div class="col-12 mt-3">
-                <div class="text-center col-lg-8 col-sm-11 bg-white mx-auto category-name">
-                    <h1 class="py-2 text-title">Vêtements</h1>
+                <div class="text-center col-lg-8 col-sm-11 bg-title-color mx-auto category-name">
+                    <h1 class="py-2 text-title">vêtements</h1>
                 </div>
                 <div class="card-group">
                     <div id="Product" class="col-12 mt-2">
@@ -105,7 +107,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product1')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product2">
+                            <div class="card col-lg-2 col-sm-11 border" id="product2">
                                 <img src="assets/img/vetements/chaussettes_chewbacca.png" class="card-img-top"
                                     alt="Chaussettes Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -116,7 +118,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product2')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product3">
+                            <div class="card col-lg-2 col-sm-11 border" id="product3">
                                 <img src="assets/img/vetements/freegun_stormstrooper.png" class="card-img-top"
                                     alt="Caleçon Stormstrooper">
                                 <div class="card-body d-flex flex-column">
@@ -129,7 +131,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product3')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product4">
+                            <div class="card col-lg-2 col-sm-11 border" id="product4">
                                 <img src="assets/img/vetements/pull_noel_baby_yoda.png" class="card-img-top"
                                     alt="Pull Baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -148,7 +150,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product5">
+                            <div class="card col-lg-2 col-sm-11 border" id="product5">
                                 <img src="assets/img/vetements/pull_noel_sw.png" class="card-img-top"
                                     alt="Pull Noel Stars Wars">
                                 <div class="card-body d-flex flex-column">
@@ -159,7 +161,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product5')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product6">
+                            <div class="card col-lg-2 col-sm-11 border" id="product6">
                                 <img src="assets/img/vetements/pull_noel_yoda.png" class="card-img-top" alt="Pull Yoda">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pull Noel Yoda</h5>
@@ -169,7 +171,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product6')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product7">
+                            <div class="card col-lg-2 col-sm-11 border" id="product7">
                                 <img src="assets/img/vetements/robe_de_chambre_sw.png" class="card-img-top"
                                     alt="robe de chambre.">
                                 <div class="card-body d-flex flex-column">
@@ -180,7 +182,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product7')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product8">
+                            <div class="card col-lg-2 col-sm-11 border" id="product8">
                                 <img src="assets/img/vetements/sweat_dark_vador.png" class="card-img-top"
                                     alt="sweat dark-vador">
                                 <div class="card-body d-flex flex-column">
@@ -198,7 +200,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product9">
+                            <div class="card col-lg-2 col-sm-11 border" id="product9">
                                 <img src="assets/img/vetements/tshirt-chewbacca.png" class="card-img-top"
                                     alt="Tshirt Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -212,7 +214,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product9')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product10">
+                            <div class="card col-lg-2 col-sm-11 border" id="product10">
                                 <img src="assets/img/vetements/tshirt_baby_yoda.png" class="card-img-top"
                                     alt="Tshirt Baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -226,7 +228,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product10')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product11">
+                            <div class="card col-lg-2 col-sm-11 border" id="product11">
                                 <img src="assets/img/vetements/tshirt_luke.png" class="card-img-top" alt="Tshirt Luke">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Tshirt Luke</h5>
@@ -239,7 +241,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product11')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product12">
+                            <div class="card col-lg-2 col-sm-11 border" id="product12">
                                 <img src="assets/img/vetements/tshirt_yoda_pokemon.png" class="card-img-top"
                                     alt="Tshirt Yoda Pokemon">
                                 <div class="card-body d-flex flex-column">
@@ -261,7 +263,7 @@
 
         <div id="figurine">
             <div class="col-12 mt-3">
-                <div class="text-center col-lg-8 col-sm-11 bg-white mx-auto category-name">
+                <div class="text-center col-lg-8 col-sm-11 bg-title-color mx-auto category-name">
                     <h1 class="py-2 text-title">Figurines</h1>
                 </div>
                 <div class="card-group">
@@ -281,7 +283,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product13')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product14">
+                            <div class="card col-lg-2 col-sm-11 border" id="product14">
                                 <img src="assets/img/figurines/bb8.png" class="card-img-top" alt="Figurine BB8">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine BB8</h5>
@@ -293,7 +295,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product14')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product15">
+                            <div class="card col-lg-2 col-sm-11 border" id="product15">
                                 <img src="assets/img/figurines/c3po.png" class="card-img-top" alt="Figurine C3P0">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"> Figurine C3P0</h5>
@@ -305,7 +307,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product15')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product16">
+                            <div class="card col-lg-2 col-sm-11 border" id="product16">
                                 <img src="assets/img/figurines/chewbacca.png" class="card-img-top"
                                     alt="Figurine Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -325,7 +327,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product17">
+                            <div class="card col-lg-2 col-sm-11 border" id="product17">
                                 <img src="assets/img/figurines/dark_vador.png" class="card-img-top"
                                     alt="Figurine Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -338,7 +340,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product17')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product18">
+                            <div class="card col-lg-2 col-sm-11 border" id="product18">
                                 <img src="assets/img/figurines/han_solo.png" class="card-img-top"
                                     alt="Figurine Han Solo">
                                 <div class="card-body d-flex flex-column">
@@ -351,7 +353,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product18')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product19">
+                            <div class="card col-lg-2 col-sm-11 border" id="product19">
                                 <img src="assets/img/figurines/jabba.png" class="card-img-top" alt="Figurine Jabba">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Jabba le BG</h5>
@@ -363,7 +365,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product19')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product20">
+                            <div class="card col-lg-2 col-sm-11 border" id="product20">
                                 <img src="assets/img/figurines/jawa.png" class="card-img-top" alt="Figurine Jawa">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Jawa</h5>
@@ -382,7 +384,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product21">
+                            <div class="card col-lg-2 col-sm-11 border" id="product21">
                                 <img src="assets/img/figurines/kylo_ren.png" class="card-img-top"
                                     alt="Figurine Kylo Ren">
                                 <div class="card-body d-flex flex-column">
@@ -395,7 +397,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product21')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product22">
+                            <div class="card col-lg-2 col-sm-11 border" id="product22">
                                 <img src="assets/img/figurines/leia.png" class="card-img-top" alt="Figurine Lela">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Lela</h5>
@@ -407,7 +409,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product22')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product23">
+                            <div class="card col-lg-2 col-sm-11 border" id="product23">
                                 <img src="assets/img/figurines/r2d2.png" class="card-img-top" alt="Figurine R2D2">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine R2D2</h5>
@@ -419,7 +421,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product23')">Ajouter au panier</a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product24">
+                            <div class="card col-lg-2 col-sm-11 border" id="product24">
                                 <img src="assets/img/figurines/rey.png" class="card-img-top" alt="Figurine Rey">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Rey</h5>
@@ -441,14 +443,14 @@
 
         <div id="cave">
             <div class="col-12 mt-3">
-                <div class="text-center col-lg-8 col-sm-11 bg-white mx-auto category-name">
+                <div class="text-center col-lg-8 col-sm-11 bg-title-color mx-auto category-name">
                     <h1 class="py-2 text-title">La caverne de Jabba</h1>
                     <p class="pb-2 text-paragraph">Dans cette catégorie, vous trouverez toutes sortes d'objets insolites !</p>
                 </div>
                 <div class="card-group">
                     <div id="Product" class="col-12">
                         <div id="caverne" class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product25">
+                            <div class="card col-lg-2 col-sm-11 border" id="product25">
                                 <img src="assets/img/caverne/abattant_dark_vador.png" class="card-img-top"
                                     alt="Abattant Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -460,7 +462,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product25')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product26">
+                            <div class="card col-lg-2 col-sm-11 border" id="product26">
                                 <img src="assets/img/caverne/boite_a_musique.png" class="card-img-top"
                                     alt="Boite à musique">
                                 <div class="card-body d-flex flex-column">
@@ -472,7 +474,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product26')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product27">
+                            <div class="card col-lg-2 col-sm-11 border" id="product27">
                                 <img src="assets/img/caverne/boule_sapin_baby_yoda.png" class="card-img-top"
                                     alt="boule de sapin baby yoda">
                                 <div class="card-body d-flex flex-column">
@@ -483,7 +485,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product27')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-1 border" id="product28">
+                            <div class="card col-lg-2 col-sm-1 border" id="product28">
                                 <img src="assets/img/caverne/casque_luke.png" class="card-img-top" alt="Casque Luke">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Casque Luke</h5>
@@ -501,7 +503,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product29">
+                            <div class="card col-lg-2 col-sm-11 border" id="product29">
                                 <img src="assets/img/caverne/decapsuleur.png" class="card-img-top" alt="Decapsuleur">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Decapsuleur</h5>
@@ -513,7 +515,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product29')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product30">
+                            <div class="card col-lg-2 col-sm-11 border" id="product30">
                                 <img src="assets/img/caverne/gauffrier_dark_vador.png" class="card-img-top"
                                     alt="gauffrier_dark_vador">
                                 <div class="card-body d-flex flex-column">
@@ -526,7 +528,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product30')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product31">
+                            <div class="card col-lg-2 col-sm-11 border" id="product31">
                                 <img src="assets/img/caverne/grille_pain_deathstar.png" class="card-img-top"
                                     alt="grille pain Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -539,7 +541,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product31')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product32">
+                            <div class="card col-lg-2 col-sm-11 border" id="product32">
                                 <img src="assets/img/caverne/housse_chewbacca.png" class="card-img-top"
                                     alt="Coussin Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -559,7 +561,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border" id="product33">
+                            <div class="card col-lg-2 col-sm-11 border" id="product33">
                                 <img src="assets/img/caverne/interrupteur.png" class="card-img-top" alt="Interrupteur">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Interrupteur</h5>
@@ -569,7 +571,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product33')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product34">
+                            <div class="card col-lg-2 col-sm-11 border" id="product34">
                                 <img src="assets/img/caverne/sabre_laser.png" class="card-img-top" alt="Sabre Laser">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Sabre Laser</h5>
@@ -579,7 +581,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product34')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product35">
+                            <div class="card col-lg-2 col-sm-11 border" id="product35">
                                 <img src="assets/img/caverne/spatule_sw.png" class="card-img-top" alt="Spatule">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Spatule</h5>
@@ -589,7 +591,7 @@
                                     <a href="#" class="btn add-button" onclick="ajouterPanier('product35')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border" id="product36">
+                            <div class="card col-lg-2 col-sm-11 border" id="product36">
                                 <img src="assets/img/caverne/tasse_baby_yoda.png" class="card-img-top"
                                     alt="Tasse baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -608,28 +610,28 @@
             </div>
         </div>
 
-        <footer class="card col-lg-8 col-sm-12 mx-auto page-footer font-small mt-4 pt-4 footer-color footer-corner">
+        <footer class="card mx-auto page-footer font-small mt-4 pt-4 footer-color footer-corner">
             <div class="container-fluid text-center text-md-left mb-3">
                 <div class="row">
                     <div class="col-md-6 mt-md-0 mt-3 text-white">
-                        <h5 class="text-uppercase">JawaShop</h5>
-                        <p>Goodies sur l'univers de Star wars</p>
+                        <h5 class="text-uppercase titleFooter">JawaShop</h5>
+                        <p class="textFooter">Goodies sur l'univers de Star wars</p>
                     </div>
 
                     <div class="mb-3">
-                        <h5 class="text-uppercase text-white">Liens</h5>
+                        <h5 class="text-uppercase text-white titleFooter">catégories</h5>
                         <ul class="list-unstyled">
                             <li>
-                                <a id="homeFoot" class="btn text-light-grey" href="#">Accueil</a>
+                                <a id="homeFoot" class="btn text-light-grey textFooter" href="#">Accueil</a>
                             </li>
                             <li>
-                                <a id="clothesFoot" class="btn text-light-grey" href="#">Vêtements</a>
+                                <a id="clothesFoot" class="btn text-light-grey textFooter" href="#">Vêtements</a>
                             </li>
                             <li>
-                                <a id="figuFoot" class="btn text-light-grey" href="#">Figurines</a>
+                                <a id="figuFoot" class="btn text-light-grey textFooter" href="#">Figurines</a>
                             </li>
                             <li>
-                                <a id="caveFoot" class="btn text-light-grey" href="#">Caverne de Jabba</a>
+                                <a id="caveFoot" class="btn text-light-grey textFooter" href="#">Caverne de Jabba</a>
                             </li>
                         </ul>
                     </div>

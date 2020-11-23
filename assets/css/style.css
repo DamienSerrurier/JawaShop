@@ -9,11 +9,14 @@ body {
     height: 100%;
 }
 
-.border, .category-name {
+.border {
     border-radius: 5px;
     box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.20);
 }
 
+.category-name {
+    border-radius: 5px;
+}
 
 .textNavbar {
     color: white !important;
@@ -73,11 +76,17 @@ img {
 
 .text-navbar {
     color: white;
-    font-size: 1.7vh;
+    font-size: 1.8vh;
 }
 
-.card-text, .text-paragraph {
+.card-text {
     font-size: 2vh;
+}
+
+.text-paragraph {
+    font-size: 2vh;
+    color: white;
+    text-shadow: 1px 1px 1px black;
 }
 
 .card-title {
@@ -92,6 +101,40 @@ img {
     border-radius: 5px;
 }
 
+@font-face {
+    font-family: "Starjedi";
+    src: url("../fonts/Starjedi.ttf") format("truetype");
+}
+
 .text-title {
     font-size: 3.2vh;
+    color: white;
+    font-family: Starjedi, sans-serif;
+    text-shadow: 1px 1px 1px black;
+    font-weight: unset;
+}
+
+.jawa-title {
+    font-size: 7vh;
+    color: black;
+    font-family: Starjedi, sans-serif;
+    text-decoration: underline;
+}
+
+.jawa-slogan {
+    font-size: 1.7vh;
+    font-family: Starjedi, sans-serif;
+}
+
+.navbar-text {
+    font-size: 3vh;
+}
+
+.bg-title-color {
+    background-color: #24414C;
+}
+
+.imgCart {
+    width: auto;
+    height: 2rem;
 }
