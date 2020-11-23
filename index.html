@@ -48,7 +48,7 @@
         </div>
     </nav>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="PanierModalLabel">Votre panier</h5>
@@ -58,17 +58,10 @@
                 </div>
                 <div class="modal-nav">
                     <form>
-                        <table>
-                            <td> photo + description </td>
-                            <td>Prix unitaire</td>
+                        <table id="panier">
                             <td> Quantite
-                                <button> + </button>
-                                <button> - </button>
                             </td>
                             <td> Total</td>
-
-                            </tr>
-
                             <td>Montant total Commande
                                 <input class="Montant"></input>
                             </td>
@@ -79,7 +72,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button id="delete" type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
                     <button type="button" class="btn btn-primary">Continuez vos achats</button>
                 </div>
             </div>
@@ -100,7 +93,7 @@
                 <div class="card-group">
                     <div id="Product" class="col-12 mt-2">
                         <div class="row justify-content-center">
-                            <div class="card col-lg-2 col-sm-11 border Product1">
+                            <div class="card col-lg-2 col-sm-11 border" id="product1">
                                 <img src="assets/img/vetements/chaussetes_c3po.png" class="card-img-top"
                                     alt="Chaussettes C3PO">
                                 <div class="card-body d-flex flex-column">
@@ -109,10 +102,10 @@
                                         étoiles.</p>
                                     <p class="text-ref">Réf : 001</p>
                                     <p class="price">10€</p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product1')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product2">
                                 <img src="assets/img/vetements/chaussettes_chewbacca.png" class="card-img-top"
                                     alt="Chaussettes Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -120,10 +113,10 @@
                                     <p class="card-text">Chaussettes Star Wars Chewbacca, 35 - 43.</p>
                                     <p class="text-ref">Réf : 002</p>
                                     <p class="price">10€</p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product2')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product3">
                                 <img src="assets/img/vetements/freegun_stormstrooper.png" class="card-img-top"
                                     alt="Caleçon Stormstrooper">
                                 <div class="card-body d-flex flex-column">
@@ -133,10 +126,10 @@
                                     </p>
                                     <p class="text-ref">Réf : 003</p>
                                     <p class="price">12€</p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product3')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product4">
                                 <img src="assets/img/vetements/pull_noel_baby_yoda.png" class="card-img-top"
                                     alt="Pull Baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -145,7 +138,7 @@
                                     </p>
                                     <p class="text-ref">Réf : 004</p>
                                     <p class="price">35€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product4')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +148,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product5">
                                 <img src="assets/img/vetements/pull_noel_sw.png" class="card-img-top"
                                     alt="Pull Noel Stars Wars">
                                 <div class="card-body d-flex flex-column">
@@ -163,20 +156,20 @@
                                     <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
                                     <p class="text-ref">Réf : 005</p>
                                     <p class="price">35€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product5')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product6">
                                 <img src="assets/img/vetements/pull_noel_yoda.png" class="card-img-top" alt="Pull Yoda">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Pull Noel Yoda</h5>
                                     <p class="card-text">Lavage à la main, manche longue bleu marine, taille S à XL</p>
                                     <p class="text-ref">Réf : 006</p>
                                     <p class="price">35€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product6')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product7">
                                 <img src="assets/img/vetements/robe_de_chambre_sw.png" class="card-img-top"
                                     alt="robe de chambre.">
                                 <div class="card-body d-flex flex-column">
@@ -184,10 +177,10 @@
                                     <p class="card-text">ROBE DE CHAMBRE 100% Polyester, taille de 3 à 14 ans.</p>
                                     <p class="text-ref">Réf : 007</p>
                                     <p class="price">23€<span class="priceCent">95</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product7')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product8">
                                 <img src="assets/img/vetements/sweat_dark_vador.png" class="card-img-top"
                                     alt="sweat dark-vador">
                                 <div class="card-body d-flex flex-column">
@@ -195,7 +188,7 @@
                                     <p class="card-text">Lavage à la main, manche longue couleur noir, taille S à XL</p>
                                     <p class="text-ref">Réf : 008</p>
                                     <p class="price">25€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product8')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +198,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product9">
                                 <img src="assets/img/vetements/tshirt-chewbacca.png" class="card-img-top"
                                     alt="Tshirt Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -216,10 +209,10 @@
                                         Manche courte existe en taille S à XL</p>
                                     <p class="text-ref">Réf : 009</p>
                                     <p class="price">15€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product9')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product10">
                                 <img src="assets/img/vetements/tshirt_baby_yoda.png" class="card-img-top"
                                     alt="Tshirt Baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -230,10 +223,10 @@
                                         Manche courte existe en taille S à XL.</p>
                                     <p class="text-ref">Réf : 010</p>
                                     <p class="price">12€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product10')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product11">
                                 <img src="assets/img/vetements/tshirt_luke.png" class="card-img-top" alt="Tshirt Luke">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Tshirt Luke</h5>
@@ -243,10 +236,10 @@
                                         Manche courte existe en taille S à XL.</p>
                                     <p class="text-ref">Réf : 011</p>
                                     <p class="price">12€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product11')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product12">
                                 <img src="assets/img/vetements/tshirt_yoda_pokemon.png" class="card-img-top"
                                     alt="Tshirt Yoda Pokemon">
                                 <div class="card-body d-flex flex-column">
@@ -257,7 +250,7 @@
                                         Manche courte existe en taille S à XL.</p>
                                     <p class="text-ref">Réf : 012</p>
                                     <p class="price">12€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product12')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -274,7 +267,7 @@
                 <div class="card-group">
                     <div id="Product" class="col-12 mt-2">
                         <div id="figurines" class="row justify-content-center">
-                            <div class="card col-lg-2 col-sm-11 border Product1">
+                            <div class="card col-lg-2 col-sm-11 border" id="product13">
                                 <img src="assets/img/figurines/baby_yoda_eating.png" class="card-img-top"
                                     alt="Bébé Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -285,10 +278,10 @@
                                     </p>
                                     <p class="text-ref">Réf : 013</p>
                                     <p class="price">16€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product13')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product14">
                                 <img src="assets/img/figurines/bb8.png" class="card-img-top" alt="Figurine BB8">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine BB8</h5>
@@ -297,10 +290,10 @@
                                         Collectionnez-les tous!</p>
                                     <p class="text-ref">Réf : 014</p>
                                     <p class="price">13€<span class="priceCent">99</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product14')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product15">
                                 <img src="assets/img/figurines/c3po.png" class="card-img-top" alt="Figurine C3P0">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title"> Figurine C3P0</h5>
@@ -309,10 +302,10 @@
                                         Collectionnez-les tous!</p>
                                     <p class="text-ref">Réf : 015</p>
                                     <p class="price">10€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product15')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product16">
                                 <img src="assets/img/figurines/chewbacca.png" class="card-img-top"
                                     alt="Figurine Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -322,7 +315,7 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 016</p>
                                     <p class="price">12€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product16')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -332,7 +325,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product17">
                                 <img src="assets/img/figurines/dark_vador.png" class="card-img-top"
                                     alt="Figurine Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -342,10 +335,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 017</p>
                                     <p class="price">12€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product17')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product18">
                                 <img src="assets/img/figurines/han_solo.png" class="card-img-top"
                                     alt="Figurine Han Solo">
                                 <div class="card-body d-flex flex-column">
@@ -355,10 +348,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 018</p>
                                     <p class="price">14€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product18')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product19">
                                 <img src="assets/img/figurines/jabba.png" class="card-img-top" alt="Figurine Jabba">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Jabba le BG</h5>
@@ -367,10 +360,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 019</p>
                                     <p class="price">14€<span class="priceCent">95</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product19')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product20">
                                 <img src="assets/img/figurines/jawa.png" class="card-img-top" alt="Figurine Jawa">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Jawa</h5>
@@ -379,7 +372,7 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 020</p>
                                     <p class="price">15€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product20')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -389,7 +382,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product21">
                                 <img src="assets/img/figurines/kylo_ren.png" class="card-img-top"
                                     alt="Figurine Kylo Ren">
                                 <div class="card-body d-flex flex-column">
@@ -399,10 +392,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 021</p>
                                     <p class="price">15€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product21')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product22">
                                 <img src="assets/img/figurines/leia.png" class="card-img-top" alt="Figurine Lela">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Lela</h5>
@@ -411,10 +404,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 022</p>
                                     <p class="price">12€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product22')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product23">
                                 <img src="assets/img/figurines/r2d2.png" class="card-img-top" alt="Figurine R2D2">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine R2D2</h5>
@@ -423,10 +416,10 @@
                                         Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 023</p>
                                     <p class="price">13€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier</a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product23')">Ajouter au panier</a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product24">
                                 <img src="assets/img/figurines/rey.png" class="card-img-top" alt="Figurine Rey">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Figurine Rey</h5>
@@ -437,7 +430,7 @@
                                         apparaître le personnage Collectionnez-les tous</p>
                                     <p class="text-ref">Réf : 024</p>
                                     <p class="price">14€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier</a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product24')">Ajouter au panier</a>
                                 </div>
                             </div>
                         </div>
@@ -455,7 +448,7 @@
                 <div class="card-group">
                     <div id="Product" class="col-12">
                         <div id="caverne" class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product25">
                                 <img src="assets/img/caverne/abattant_dark_vador.png" class="card-img-top"
                                     alt="Abattant Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -464,10 +457,10 @@
                                         Vinyl Brillant Couleur au Choix</p>
                                     <p class="text-ref">Réf : 025</p>
                                     <p class="price">6€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product25')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product26">
                                 <img src="assets/img/caverne/boite_a_musique.png" class="card-img-top"
                                     alt="Boite à musique">
                                 <div class="card-body d-flex flex-column">
@@ -476,10 +469,10 @@
                                         transporter.</p>
                                     <p class="text-ref">Réf : 026</p>
                                     <p class="price">10€<span class="priceCent">99</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product26')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product27">
                                 <img src="assets/img/caverne/boule_sapin_baby_yoda.png" class="card-img-top"
                                     alt="boule de sapin baby yoda">
                                 <div class="card-body d-flex flex-column">
@@ -487,10 +480,10 @@
                                     <p class="card-text">Ornement pour sapin de noël.</p>
                                     <p class="text-ref">Réf : 027</p>
                                     <p class="price">13€<span class="priceCent">59</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product27')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-1 border Product1">
+                            <div class="card col-xl-2 col-sm-1 border" id="product28">
                                 <img src="assets/img/caverne/casque_luke.png" class="card-img-top" alt="Casque Luke">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Casque Luke</h5>
@@ -498,7 +491,7 @@
                                         et multiples effets sonores et lumineux. 3 modes.</p>
                                     <p class="text-ref">Réf : 028</p>
                                     <p class="price">99€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product28')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -508,7 +501,7 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product29">
                                 <img src="assets/img/caverne/decapsuleur.png" class="card-img-top" alt="Decapsuleur">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Decapsuleur</h5>
@@ -517,10 +510,10 @@
                                     </p>
                                     <p class="text-ref">Réf : 029</p>
                                     <p class="price">8€<span class="priceCent">95</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product29')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product30">
                                 <img src="assets/img/caverne/gauffrier_dark_vador.png" class="card-img-top"
                                     alt="gauffrier_dark_vador">
                                 <div class="card-body d-flex flex-column">
@@ -530,10 +523,10 @@
                                         Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres.</p>
                                     <p class="text-ref">Réf : 030</p>
                                     <p class="price">45€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product30')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product31">
                                 <img src="assets/img/caverne/grille_pain_deathstar.png" class="card-img-top"
                                     alt="grille pain Dark Vador">
                                 <div class="card-body d-flex flex-column">
@@ -543,10 +536,10 @@
                                         Dimensions de l'article L x L x H 20 x 24.6 x 8.4 centimètres.</p>
                                     <p class="text-ref">Réf : 031</p>
                                     <p class="price">45€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product31')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product32">
                                 <img src="assets/img/caverne/housse_chewbacca.png" class="card-img-top"
                                     alt="Coussin Chewbacca">
                                 <div class="card-body d-flex flex-column">
@@ -556,7 +549,7 @@
                                     </p>
                                     <p class="text-ref">Réf : 032</p>
                                     <p class="price">13€</p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product32')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
@@ -566,37 +559,37 @@
                 <div class="card-group mt-3">
                     <div id="Product" class="col-12">
                         <div class="row justify-content-center">
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product33">
                                 <img src="assets/img/caverne/interrupteur.png" class="card-img-top" alt="Interrupteur">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Interrupteur</h5>
                                     <p class="card-text">Autocollant en vinyle pour interrupteur à motifs Star Wars.</p>
                                     <p class="text-ref">Réf : 033</p>
                                     <p class="price">1€<span class="priceCent">25</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product33')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product34">
                                 <img src="assets/img/caverne/sabre_laser.png" class="card-img-top" alt="Sabre Laser">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Sabre Laser</h5>
                                     <p class="card-text">Sabre laser scream saber avec effets sonores. 3 modes.</p>
                                     <p class="text-ref">Réf : 034</p>
                                     <p class="price">19€<span class="priceCent">90</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product34')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product35">
                                 <img src="assets/img/caverne/spatule_sw.png" class="card-img-top" alt="Spatule">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Spatule</h5>
                                     <p class="card-text">Star Wars Rogue One SW02095 Spatule - Dark Vador.</p>
                                     <p class="text-ref">Réf : 035</p>
                                     <p class="price">22€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product35')">Ajouter au panier </a>
                                 </div>
                             </div>
-                            <div class="card col-xl-2 col-sm-11 border Product1">
+                            <div class="card col-xl-2 col-sm-11 border" id="product36">
                                 <img src="assets/img/caverne/tasse_baby_yoda.png" class="card-img-top"
                                     alt="Tasse baby Yoda">
                                 <div class="card-body d-flex flex-column">
@@ -606,7 +599,7 @@
                                         Capacité 300 millilitres.</p>
                                     <p class="text-ref">Réf : 036</p>
                                     <p class="price">12€<span class="priceCent">50</span></p>
-                                    <a href="#" class="btn add-button">Ajouter au panier </a>
+                                    <a href="#" class="btn add-button" onclick="ajouterPanier('product36')">Ajouter au panier </a>
                                 </div>
                             </div>
                         </div>
