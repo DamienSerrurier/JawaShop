@@ -79,45 +79,24 @@ caveFoot.onclick = () => {
 
 // end display categories without refreshlet 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 let deja_cliquer = [] // les ids de tout les elements deja cliquer
 function produit_deja_cliquer(id) {
     return deja_cliquer.indexOf(id) !== -1; // renvoi vrai si deja cliquer sinon faux
 }
 
+let sousTotaux = [];
+function calc_total() {
+    let total = 0;
+    for (let i = 0; i < sousTotaux.length; i += 1) {
+        total = total + parseFloat(sousTotaux[i].innerHTML);
+    }
+    console.log("fwegew")
+    document.getElementById("panierTotal").innerHTML = total;
+    // sousTotaux.forEach(sousTotal => total += sousTotal); equivalent foreach
+}
 
-function ajouterPanier(id_du_produit) {
-
+function ajouterPanier(event, id_du_produit) {
+    event.preventDefault() // evite de recharger la page qund on ajouter un produit au panier
     if (produit_deja_cliquer(id_du_produit) === true) {
         console.log("objet deja cliquer")
         return;
@@ -141,62 +120,50 @@ function ajouterPanier(id_du_produit) {
     new_elem.appendChild(ref);
     new_elem.appendChild(prix);
 
-
-
-
-
-
-
-
-    let displayCounter = document.createElement('input');
-    displayCounter.id = id_du_produit;
+    let displayCounter = document.createElement('div');
+    displayCounter.style = "border: 1px solid black;" +
+                            "width: max-content;" +
+                            "height: max-content;" +
+                            "padding: 0px 5px 0px 5px";
+    displayCounter.innerHTML = "1";
     new_elem.appendChild(displayCounter)
 
-    let sousTotal = document.createElement('input')
-    sousTotal.id = id_du_produit;
+    let sousTotal = document.createElement('div');
+    sousTotal.style = "border: 1px solid black;" +
+                            "width: max-content;" +
+                            "height: max-content;" +
+                            "padding: 0px 5px 0px 5px";
+    sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix)
+    sousTotaux.push(sousTotal);
     new_elem.appendChild(sousTotal);
 
     let new_button = document.createElement("button");
     new_button.innerHTML = "+";
     new_button.onclick = event => {
         event.preventDefault();
-        console.log("+ 1");
-        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
-        return multiply;
-        //   ici on ajoute 1 a cet article
-        // new_button.onclick = event => {
-        //     if (parseInt(compteur.innerHTML) + 1 >= 0) {
-        //        let text = ""
-        //         compteur.innerHTML = parseInt(compteur.innerHTML) + 1;
-        //         // displayCounter.appendChild(compteur.innerHTML);
-
-        //     }
-
-        // }
+        // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
+        displayCounter.innerHTML = +displayCounter.innerHTML + 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
+        sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix)
+        calc_total(); // on met jour le total 
+        
+        // return multiply;
+    
     }
     let new_button2 = document.createElement("button");
     new_button2.innerHTML = "-";
     new_button2.onclick = event => {
         event.preventDefault();
-        console.log("- 1");
-        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
+        // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
+        if (+displayCounter.innerHTML <= 1) // protection pour eviter d'aller dans les negatifs
+            return;
+        displayCounter.innerHTML = +displayCounter.innerHTML - 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
+        sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix)
+        calc_total(); // on met jour le total 
 
-        //  ici on supprime 1 a cet article
-        // new_button2.onclick = event => {
-        //     if (parseInt(compteur.innerHTML) - 1 >= 0) {
-        //         compteur.innerHTML = parseInt(compteur.innerHTML) - 1;
-
-
-
-
-
-        //     }
-
-        // }
+      
     }
 
     document.getElementById("panier").appendChild(new_elem);
-
     new_elem.appendChild(new_button);
     new_elem.appendChild(new_button2);
 
@@ -205,17 +172,23 @@ function ajouterPanier(id_du_produit) {
 
 let supShop = document.getElementById("delete");
 supShop.onclick = () => {
-    panier.innerHtml = null;
+    document.getElementById("panier").innerHTML = null;
     deja_cliquer = [];
+    sousTotaux = [];
+    calc_total()
 }
 
 
-function multiply(price) {
-    console.log(price);
-    return price = parseFloat(prix) * parseFloat(displayCounter);
+function get_prix_article(prix) {
+    return +prix.textContent.replace('€', '.') // textcontent contien le prix sous forme de texte on le tranforme juste en float
 }
 
-function divide(price) {
-    console.log(price);
-    return price = parseFloat(prix) / parseFloat(displayCounter);
-}
+// function multiply(price) {
+//     console.log(price);
+//     return price = parseFloat(prix) * parseFloat(displayCounter);
+// }
+
+// function divide(price) {
+//     console.log(price);
+//     return price = parseFloat(prix) / parseFloat(displayCounter);
+// }
