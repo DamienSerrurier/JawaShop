@@ -106,7 +106,7 @@ caveFoot.onclick = () => {
 
 
 
-
+let valeur = 0;
 
 
 
@@ -114,6 +114,7 @@ let deja_cliquer = [] // les ids de tout les elements deja cliquer
 function produit_deja_cliquer(id) {
     return deja_cliquer.indexOf(id) !== -1; // renvoi vrai si deja cliquer sinon faux
 }
+
 
 
 function ajouterPanier(id_du_produit) {
@@ -131,7 +132,7 @@ function ajouterPanier(id_du_produit) {
     let produit_img = produit.children[0]; // on recuper les element contenu dans notre card sous forme de tableau et l'index 0 correspond a son <img>
     let titre = produit.children[1].children[0] // on recupere la div card body puis dans cette div on recupere le titre <h5>
     let ref = produit.children[1].children[2] // on recupere la div card body puis dans cette div on recupere le prix
-    let prix = produit.children[1].children[3] // on recupere la div card body puis dans cette div on recupere le titre <h5>
+    let price = produit.children[1].children[3] // on recupere la div card body puis dans cette div on recupere le titre <h5>
     ///////////////////////////
 
     ///////////////////// AJOUT AU PANIER
@@ -139,14 +140,25 @@ function ajouterPanier(id_du_produit) {
     new_elem.appendChild(produit_img);
     new_elem.appendChild(titre);
     new_elem.appendChild(ref);
-    new_elem.appendChild(prix);
+    new_elem.appendChild(price);
+
+    let newButtonPositive = document.createElement("button");
+    newButtonPositive.innerHTML = "+";
+
+    let newButtonNegative = document.createElement("button");
+    newButtonNegative.innerHTML = "-";
 
 
+    let supShop = document.getElementById("delete");
+    supShop.onclick = () => {
+        panier.innerHtml = null;
+        deja_cliquer = [];
+    }
 
+    document.getElementById("panier").appendChild(new_elem);
 
-
-
-
+    new_elem.appendChild(newButtonPositive);
+    new_elem.appendChild(newButtonNegative);
 
     let displayCounter = document.createElement('input');
     displayCounter.id = id_du_produit;
@@ -156,66 +168,44 @@ function ajouterPanier(id_du_produit) {
     sousTotal.id = id_du_produit;
     new_elem.appendChild(sousTotal);
 
-    let new_button = document.createElement("button");
-    new_button.innerHTML = "+";
-    new_button.onclick = event => {
+    newButtonPositive.onclick = function positive(event) {
+
         event.preventDefault();
         console.log("+ 1");
-        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
-        return multiply;
-        //   ici on ajoute 1 a cet article
-        // new_button.onclick = event => {
-        //     if (parseInt(compteur.innerHTML) + 1 >= 0) {
-        //        let text = ""
-        //         compteur.innerHTML = parseInt(compteur.innerHTML) + 1;
-        //         // displayCounter.appendChild(compteur.innerHTML);
+        valeur = document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
 
-        //     }
-
-        // }
+        if (valeur >= 1) {
+            console.log('ok');
+            price.innerHTML = parseFloat(price.innerHTMLe) * parseFloat(displayCounter.innerHTML);
+             
+            
+        }
     }
-    let new_button2 = document.createElement("button");
-    new_button2.innerHTML = "-";
-    new_button2.onclick = event => {
+
+
+
+    newButtonNegative.onclick = function negative(event) {
+
         event.preventDefault();
         console.log("- 1");
-        document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
-
-        //  ici on supprime 1 a cet article
-        // new_button2.onclick = event => {
-        //     if (parseInt(compteur.innerHTML) - 1 >= 0) {
-        //         compteur.innerHTML = parseInt(compteur.innerHTML) - 1;
-
-
-
-
-
-        //     }
-
-        // }
+        valeur = document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
+        return valeur;
     }
-
-    document.getElementById("panier").appendChild(new_elem);
-
-    new_elem.appendChild(new_button);
-    new_elem.appendChild(new_button2);
-
-
-}
-
-let supShop = document.getElementById("delete");
-supShop.onclick = () => {
-    panier.innerHtml = null;
-    deja_cliquer = [];
+    // if (displayCounter.value == 0) {
+    //     newButtonNegative.setAttribute('disabled', '');
+    //     console.log(valeur);
+    // } else if (displayCounter.value > 0) {
+    //     newButtonNegative.removeAttribute('disabled','');
+    // }
 }
 
 
-function multiply(price) {
-    console.log(price);
-    return price = parseFloat(prix) * parseFloat(displayCounter);
-}
+// function multiply(priceMultiply) {
+//     console.log(price);
+//     return priceMultiply = parseFloat(price) * parseFloat(displayCounter);
+// }
 
-function divide(price) {
-    console.log(price);
-    return price = parseFloat(prix) / parseFloat(displayCounter);
-}
+// function divide(price) {
+//     console.log(price);
+//     return price = parseFloat(price) / parseFloat(displayCounter);
+// }
