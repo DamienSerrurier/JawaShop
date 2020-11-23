@@ -84,19 +84,19 @@ function produit_deja_cliquer(id) {
   return deja_cliquer.indexOf(id) !== -1; // renvoi vrai si deja cliquer sinon faux
 }
 
-let sousTotaux = [];
+let sousTotaux = [67, 99 , 33];
 function calc_total() {
   let total = 0;
+
   for (let i = 0; i < sousTotaux.length; i += 1) {
     total = total + parseFloat(sousTotaux[i].innerHTML);
   }
-  console.log("fwegew");
-  document.getElementById("panierTotal").innerHTML = total;
+  document.getElementById("panierTotal").innerHTML = total; // on l'affiche a l'ecran
   // sousTotaux.forEach(sousTotal => total += sousTotal); equivalent foreach
 }
 
 function ajouterPanier(event, id_du_produit) {
-  event.preventDefault(); // evite de recharger la page qund on ajouter un produit au panier
+  event.preventDefault(); // evite de recharger la page quand on ajouter un produit au panier
   if (produit_deja_cliquer(id_du_produit) === true) {
     console.log("objet deja cliquer");
     return;
@@ -112,32 +112,32 @@ function ajouterPanier(event, id_du_produit) {
   let prix = produit.children[1].children[3]; // on recupere la div card body puis dans cette div on recupere le titre <h5>
   ///////////////////////////
 
-  let new_elem = document.createElement("tr");
-  document.getElementById("panier").appendChild(new_elem);
+  let objetPanier = document.createElement("tr");
+  document.getElementById("panier").appendChild(objetPanier);
 
   ///////////////////// AJOUT AU PANIER
-  new_elem.appendChild(produit_img);
-  new_elem.appendChild(titre);
-  new_elem.appendChild(ref);
-  new_elem.appendChild(prix);
+  objetPanier.appendChild(produit_img);
+  objetPanier.appendChild(titre);
+  objetPanier.appendChild(ref);
+  objetPanier.appendChild(prix);
 
-  let displayCounter = document.createElement("div");
-  displayCounter.style =
+  let qteVoulu = document.createElement("div");
+  qteVoulu.style =
     "border: 1px solid black;" +
     "width: max-content;" +
     "height: max-content;" +
     "padding: 0px 5px 0px 5px";
-  displayCounter.innerHTML = "1";
-  new_elem.appendChild(displayCounter);
+  qteVoulu.innerHTML = "1"; // au minimum 1 objet
+  objetPanier.appendChild(qteVoulu);
 
   let sousTotal = document.createElement("div");
   sousTotal.style =
     "border: 1px solid black;" +
     "width: max-content;" +
     "height: max-content;" +
-    "padding: 0px 5px 0px 5px";
-  sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix);
-  new_elem.appendChild(sousTotal);
+    "padding: 0px 5px 0px 5px";                 
+  sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix);
+  objetPanier.appendChild(sousTotal);
   sousTotaux.push(sousTotal); // on rajoute ce sous total a la liste des sous totaux
 
   let bouttonAjouter = document.createElement("button");
@@ -145,25 +145,26 @@ function ajouterPanier(event, id_du_produit) {
   bouttonAjouter.onclick = (event) => {
     event.preventDefault();
     // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
-    displayCounter.innerHTML = +displayCounter.innerHTML + 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
-    sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix);
+    qteVoulu.innerHTML = +qteVoulu.innerHTML + 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
+    sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix); // met a jour le sous total
     calc_total(); // on met jour le total
   };
-  new_elem.appendChild(bouttonAjouter);
+  objetPanier.appendChild(bouttonAjouter);
 
   let bouttonSuprimer = document.createElement("button");
   bouttonSuprimer.innerHTML = "-";
   bouttonSuprimer.onclick = (event) => {
     event.preventDefault();
     // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
-    if (+displayCounter.innerHTML <= 1)
-      // protection pour eviter d'aller dans les negatifs
+    if (+qteVoulu.innerHTML <= 1) {
+      // protection pour eviter d'aller dans les negatifs on sors de la fonction
       return;
-    displayCounter.innerHTML = +displayCounter.innerHTML - 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
-    sousTotal.innerHTML = +displayCounter.innerHTML * get_prix_article(prix);
+    }
+    qteVoulu.innerHTML = +qteVoulu.innerHTML - 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
+    sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix);// met a jour le sous total
     calc_total(); // on met jour le total
   };
-  new_elem.appendChild(bouttonSuprimer);
+  objetPanier.appendChild(bouttonSuprimer);
 }
 
 document.getElementById("delete").onclick = () => {
