@@ -58,25 +58,35 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-nav">
+                <div class="modal-body">
                     <form>
-                        <table>
-                            <td> Quantite</td>
-                            <td> Total</td>
-                            <td>Montant total Commande
-                                <div id="panierTotal" class="Montant"></div>
-                            </td>
-                            <div id="panier">
+                        <table class="table-responsive-sm col-12">
+                            <thead class="textHome">
+                                <td>Produit</td>
+                                <td>Désignation</td>
+                                <td>Réf</td>
+                                <td>Prix</td>
+                                <td>Qté / Sous-total</td>
+                                <div id="panier">
+                                </div>
+                            </thead>
+                            <tbody id="tbodyCart">
 
-                            </div>
-                            </tr>
+                            </tbody>
+                            <tfoot>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Montant total Commande en €
+                                    <div id="panierTotal" class="Montant font-weight-bold"></div>
+                                </td>
+                            </tfoot>
                         </table>
-
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button id="delete" type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-primary">Continuez vos achats</button>
+                    <button id="delete" type="button" class="btn add-button" data-dismiss="modal">Annuler</button>
                 </div>
             </div>
         </div>
@@ -85,7 +95,31 @@
 
         <div id="home" class="col-lg-8 col-sm-11 bg-white text-center mt-3 py-2 mx-auto category-name">
             <h1 class="jawa-title">JawaShop</h1>
-            <p class="jawa-slogan">Là où la réalité dépasse la fiction.</p>
+            <h2 class="jawa-slogan">Là où la réalité dépasse la fiction.</h2>
+            <div class="col-12 mt-3">
+                <div class="row justify-content-center">
+                    <div class="col-2">
+                        <img class="imgHome" src="assets/img/boba_fett.png">
+                    </div>
+                    <div class="col-2 mt-5">
+                        <img class="imgHome mt-5" src="assets/img/the_child.png">
+                    </div>
+                    <div class="col-2">
+                        <img class="imgHome" src="assets/img/dark_maul.png">
+                    </div>
+                </div>
+                <div class="col-lg-8 col-sm-10 my-5 mx-auto align-self-center">
+                    <p class="textHome">Bienvenue sur JawaShop, le site dédié à la vente de goodies sur l'univers de
+                        Star Wars ! Visitez
+                        nos 3 catégories et découvrez des vêtements et objets fantastiques tels que l'indispensable pull
+                        de noël «Baby Yoda» ou une figurine du somptueux «Jabba le hutt» !</p>
+                    <p class="textHome">Sur une note plus sérieuse, notre catégorie «La caverne de Jabba» vous propose
+                        des objets
+                        collectors de toutes sortes comme l'abattant pour toilettes «J'essuie ton père», l'ultime preuve
+                        de votre bon goût !</p>
+                    <a id="clothesBtn2" class="btn btnHome textHome mt-4">Boutique ➔</a>
+                </div>
+            </div>
         </div>
 
         <div id="clothes">
@@ -115,7 +149,8 @@
                                     alt="Chaussettes Chewbacca">
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">Chaussettes Chewbacca</h5>
-                                    <p class="card-text">Chaussettes Star Wars Chewbacca, 35 - 43.</p>
+                                    <p class="card-text">Chaussettes Star Wars Chewbacca, 35 - 43. 5,0 sur 5
+                                        étoiles.</p>
                                     <p class="text-ref">Réf : 002</p>
                                     <p class="price">10€</p>
                                     <a href="#" class="btn add-button" onclick="ajouterPanier(event,'product2')">Ajouter
