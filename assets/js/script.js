@@ -93,6 +93,7 @@ function produit_deja_cliquer(id) {
 }
 
 let sousTotaux = [];
+
 function calc_total() {
   let total = 0;
   total.style = "fontweight : bold;"
@@ -116,9 +117,9 @@ function ajouterPanier(event, id_du_produit) {
   ///////////////////// RECUPERATION DES ELEMENTS DE LA CARTE
   let produit = document.getElementById(id_du_produit).cloneNode(true);
   let produit_img = produit.children[0]; // on recuper les element contenu dans notre card sous forme de tableau et l'index 0 correspond a son <img>
-  produit_img.style = 
-  "width: auto;" +
-  "height: 8rem;"
+  produit_img.style =
+    "width: auto;" +
+    "height: 8rem;"
   let titre = produit.children[1].children[0]; // on recupere la div card body puis dans cette div on recupere le titre <h5>
   let ref = produit.children[1].children[2]; // on recupere la div card body puis dans cette div on recupere le prix
   let prix = produit.children[1].children[3]; // on recupere la div card body puis dans cette div on recupere le titre <h5>
@@ -141,8 +142,6 @@ function ajouterPanier(event, id_du_produit) {
   objetPanier.appendChild(elementTd4);
   elementTd4.appendChild(prix);
 
-
-
   let qteVoulu = document.createElement("div");
   qteVoulu.style =
     "border: 1px solid black;" +
@@ -157,7 +156,7 @@ function ajouterPanier(event, id_du_produit) {
     "border: 1px solid black;" +
     "width: max-content;" +
     "height: max-content;" +
-    "padding: 0px 5px 0px 5px";                 
+    "padding: 0px 5px 0px 5px";
   sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix);
   objetPanier.appendChild(sousTotal);
   sousTotaux.push(sousTotal); // on rajoute ce sous total a la liste des sous totaux
@@ -169,7 +168,7 @@ function ajouterPanier(event, id_du_produit) {
     event.preventDefault();
     // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value + 1;
     qteVoulu.innerHTML = +qteVoulu.innerHTML + 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
-    
+
     sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix); // met a jour le sous total
     calc_total(); // on met jour le total
   };
@@ -186,15 +185,15 @@ function ajouterPanier(event, id_du_produit) {
       return;
     }
     qteVoulu.innerHTML = +qteVoulu.innerHTML - 1; // pas besoin de recuperer via un id on a deja une reference vers le compteur dans la variable displaycounter
-    sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix);// met a jour le sous total
+    sousTotal.innerHTML = +qteVoulu.innerHTML * get_prix_article(prix); // met a jour le sous total
     calc_total(); // on met jour le total
   };
   objetPanier.appendChild(bouttonSuprimer);
 }
 
 document.getElementById("delete").onclick = () => {
-    // on reinitialise toute les variable du panier
-  document.getElementById("panier").innerHTML = null;
+  // on reinitialise toute les variable du panier
+  document.getElementById("tbodyCart").innerHTML = null;
   deja_cliquer = [];
   sousTotaux = [];
   calc_total();

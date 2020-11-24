@@ -51,7 +51,8 @@ img {
     font-size: 2.5vh;
 }
 
-.navbar-color, .footer-color {
+.navbar-color,
+.footer-color {
     background-color: #182B33;
 }
 
@@ -59,9 +60,10 @@ img {
     color: #C0C0C0;
 }
 
-.text-light-grey:hover, .text-navbar:hover {
+.text-light-grey:hover,
+.text-navbar:hover {
     color: gold;
-  }
+}
 
 .add-button {
     color: white;
@@ -72,7 +74,7 @@ img {
 .add-button:hover {
     color: gold;
     border: solid 1px white;
-  }
+}
 
 .text-navbar {
     color: white;
@@ -166,6 +168,6 @@ img {
     font-size: 1.7vh;
 }
 
-.modal-xl{
+.modal-xl {
     min-width: 60rem;
 }
