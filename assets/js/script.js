@@ -180,7 +180,7 @@ function ajouterPanier(event, id_du_produit) {
   bouttonSuprimer.onclick = (event) => {
     event.preventDefault();
     // document.getElementById(id_du_produit).value = +document.getElementById(id_du_produit).value - 1;
-    if (+qteVoulu.innerHTML <= 1) {
+    if (+qteVoulu.innerHTML <= 0) {
       // protection pour eviter d'aller dans les negatifs on sors de la fonction
       return;
     }
@@ -189,6 +189,12 @@ function ajouterPanier(event, id_du_produit) {
     calc_total(); // on met jour le total
   };
   objetPanier.appendChild(bouttonSuprimer);
+
+  // let suppArticle = document.getElementById('delete1')
+  // suppArticle.onclick = () => {
+  //   document.getElementById("objetPanier").innerHTML = null;
+  // }
+
 }
 
 document.getElementById("delete").onclick = () => {
